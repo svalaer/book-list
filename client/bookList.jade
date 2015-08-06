@@ -1,0 +1,17 @@
+template(name="bookList")
+  if currentUser
+    h3 Here are your books
+    ul
+      each books
+        li.i {{title}} by {{author}}
+    form.add-book
+      | Title:
+      br
+      input(type='text' name='title')
+      br
+      | Author:
+      br
+      input(type='text' name='author')
+      input(type='submit' value='Add Book')
+  else
+    h3 Please log in to see your books
